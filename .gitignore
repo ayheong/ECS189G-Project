@@ -1,0 +1,39 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Environment files and virtual environments
+.env
+.venv/
+env/
+venv/
+*.env
+
+# Checkpoints and model weights
+*.pt
+*.pth
+*.ckpt
+
+# Logs and metrics
+*.log
+*.json
+*.txt
+
+# OS / editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# matplotlib cache
+.matplotlib/
+/data/stage_2_data/train.csv
+/data/stage_2_data/test.csv
