@@ -36,7 +36,7 @@ class Setting_Stage_2(setting):
             for evaluator in self.test_evaluators:
                 evaluator.data = learned_result
                 score = evaluator.evaluate()
-                print(f"{evaluator.evaluate_name}: {score}")
+                print(f"{evaluator.evaluate_name}: {score:.4f}")
 
         return self.evaluate.evaluate(), None
 
