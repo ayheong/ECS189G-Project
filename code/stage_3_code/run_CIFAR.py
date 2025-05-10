@@ -1,10 +1,14 @@
 from Dataset_Loader_CIFAR import Dataset_Loader_CIFAR
 from Method_CNN_CIFAR import Method_CNN_CIFAR
 from Evaluate_Accuracy import Evaluate_Accuracy
+from Evaluate_Weighted_F1_Score import Evaluate_Weighted_F1_Score
+from Evaluate_Weighted_Recall import Evaluate_Weighted_Recall
+from Evaluate_Weighted_Precision import Evaluate_Weighted_Precision
 from Setting_Stage_3_CIFAR import Setting_Stage_3_CIFAR
 from Result_Saver import Result_Saver
 import numpy as np
 import torch
+
 
 if __name__ == '__main__':
     np.random.seed(2)
@@ -22,7 +26,8 @@ if __name__ == '__main__':
         sDataset=Dataset_Loader_CIFAR(),
         sMethod=Method_CNN_CIFAR(),
         sResult=result,
-        sEvaluate=Evaluate_Accuracy()
+        sEvaluate=Evaluate_Accuracy(),
+        sTestEvaluators=[Evaluate_Weighted_Recall(), Evaluate_Weighted_Precision(), Evaluate_Weighted_F1_Score()]
     )
 
     # Run experiment

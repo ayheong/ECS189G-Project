@@ -1,6 +1,9 @@
 from Dataset_Loader_MNIST import Dataset_Loader_MNIST
 from Method_CNN_MNIST import Method_CNN_MNIST
 from Evaluate_Accuracy import Evaluate_Accuracy
+from Evaluate_Weighted_F1_Score import Evaluate_Weighted_F1_Score
+from Evaluate_Weighted_Recall import Evaluate_Weighted_Recall
+from Evaluate_Weighted_Precision import Evaluate_Weighted_Precision
 from Setting_Stage_3_MNIST import Setting_Stage_3_MNIST
 from Result_Saver import Result_Saver
 import numpy as np
@@ -21,7 +24,8 @@ if __name__ == '__main__':
         sDataset=Dataset_Loader_MNIST(),
         sMethod=Method_CNN_MNIST(),
         sResult=result,
-        sEvaluate=Evaluate_Accuracy()
+        sEvaluate=Evaluate_Accuracy(),
+        sTestEvaluators=[Evaluate_Weighted_Recall(), Evaluate_Weighted_Precision(), Evaluate_Weighted_F1_Score()]
     )
 
     setting.load_run_save_evaluate()

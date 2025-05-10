@@ -1,6 +1,9 @@
 from Dataset_Loader_ORL import Dataset_Loader_ORL
 from Method_CNN_ORL import Method_CNN_ORL
 from Evaluate_Accuracy import Evaluate_Accuracy
+from Evaluate_Weighted_F1_Score import Evaluate_Weighted_F1_Score
+from Evaluate_Weighted_Recall import Evaluate_Weighted_Recall
+from Evaluate_Weighted_Precision import Evaluate_Weighted_Precision
 from Setting_Stage_3_ORL import Setting_Stage_3_ORL
 from Result_Saver import Result_Saver
 import numpy as np
@@ -22,7 +25,8 @@ if __name__ == '__main__':
         sDataset=Dataset_Loader_ORL(),
         sMethod=Method_CNN_ORL(),
         sResult=result,
-        sEvaluate=Evaluate_Accuracy()
+        sEvaluate=Evaluate_Accuracy(),
+        sTestEvaluators=[Evaluate_Weighted_Recall(), Evaluate_Weighted_Precision(), Evaluate_Weighted_F1_Score()]
     )
 
     # Run experiment

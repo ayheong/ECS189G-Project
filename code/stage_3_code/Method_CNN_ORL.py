@@ -12,7 +12,7 @@ class Method_CNN_ORL(method):
         super().__init__('CNN_ORL', '')
         self.model = Net()
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        self.epochs = 20
+        self.epochs = 10
         self.batch_size = 64
         self.learning_rate = 0.001
         self.optimizer = None
@@ -22,7 +22,7 @@ class Method_CNN_ORL(method):
         self.model.to(self.device)
         self.model.train()
         trainloader = DataLoader(train_dataset, batch_size=self.batch_size, shuffle=True)
-        self.optimizer = optim.SGD(self.model.parameters(), lr=self.learning_rate, momentum=0.9)
+        self.optimizer = optim.Adam(self.model.parameters(), lr=self.learning_rate)
 
         epoch_losses = []
 

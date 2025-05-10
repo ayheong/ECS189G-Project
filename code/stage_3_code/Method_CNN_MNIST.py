@@ -22,7 +22,7 @@ class Method_CNN_MNIST(method):
         self.model.to(self.device)
         self.model.train()
         trainloader = DataLoader(train_dataset, batch_size=self.batch_size, shuffle=True)
-        self.optimizer = optim.SGD(self.model.parameters(), lr=self.learning_rate, momentum=0.9)
+        self.optimizer = optim.Adam(self.model.parameters(), lr=self.learning_rate)
 
         epoch_losses = []
 
