@@ -12,7 +12,7 @@ class Method_CNN_CIFAR(method):
         super().__init__('CNN_CIFAR', '')
         self.model = Net()
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        self.epochs = 10
+        self.epochs = 30
         self.batch_size = 64
         self.learning_rate = 0.001
         self.optimizer = None

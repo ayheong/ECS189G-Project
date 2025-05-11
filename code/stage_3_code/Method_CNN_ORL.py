@@ -22,7 +22,7 @@ class Method_CNN_ORL(method):
         self.model.to(self.device)
         self.model.train()
         trainloader = DataLoader(train_dataset, batch_size=self.batch_size, shuffle=True)
-        self.optimizer = optim.Adam(self.model.parameters(), lr=self.learning_rate)
+        self.optimizer = optim.SGD(self.model.parameters(), lr=self.learning_rate, momentum=0.9)
 
         epoch_losses = []
 
