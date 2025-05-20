@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 
 class rnn_net_text_classification(nn.Module):
-    def __init__(self, vocab_size, embedding_dim=100, hidden_dim=64, output_dim=2, embedding_weights=None):
+    def __init__(self, vocab_size, embedding_dim=100, hidden_dim=128, output_dim=2, embedding_weights=None):
         super().__init__()
         self.embedding = nn.Embedding(vocab_size, embedding_dim)
         if embedding_weights is not None:

@@ -34,7 +34,7 @@ if __name__ == '__main__':
         sResult=None,
         sEvaluate=None,
         vocab=vocab,
-        prompt_words=["what", "did", "the", "bartender", "say"]
+        prompt_words=["take", "we", "under", "all", "boat"]
     )
     setting.dataset.dataset_source_folder_path = 'data/stage_4_data/text_generation'
     setting.load_run_save_evaluate()
